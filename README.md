@@ -1,4 +1,4 @@
-Voice-Assisted Chatbot
+Voice-Assisted Chatbot using Python
 ======================
 
 Overview
