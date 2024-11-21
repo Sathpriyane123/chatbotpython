@@ -1,3 +1,8 @@
-PyWhatKit_DB.txt
+# Exclude virtual environment
+myenv/
+
+# Exclude environment variable files
 .env
-myenv
+
+# Exclude PyWhatKit logs
+PyWhatKit_DB.txt
