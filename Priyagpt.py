@@ -1,13 +1,15 @@
 import os
 import google.generativeai as genai 
 import streamlit as st 
+from dotenv import load_dotenv
 
-
+# Load the .env file
+load_dotenv()
 
 st.title("PriyaGPT")
 
-os.environ['GOOGLE_API_KEY']="AIzaSyBdtBkXs14EfmtuetApc4lQq1aZs7ZpEik"
-
+google_api_key = os.getenv("GOOGLE_API_KEY")
+print(google_api_key)  # Use the API key in your application
 genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 
 # Create the Model

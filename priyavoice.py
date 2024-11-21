@@ -9,6 +9,10 @@ import requests
 import cv2
 import webbrowser
 import os
+from dotenv import load_dotenv
+# Load the .env file
+load_dotenv()
+
 
 # Ensure pysong is correctly imported
 try:
@@ -95,7 +99,7 @@ def validate_time_format(time_str):
 import requests
 
 def get_weather(city):
-    api_key = "440320cf8c703473f6b780abf4b3dfe2"
+    api_key = os.getenv('OPENWEATHER_API_KEY')
     base_url = "https://api.openweathermap.org/data/2.5/weather"
     
     # Construct the full URL with city and API key
@@ -118,9 +122,8 @@ def get_weather(city):
         talk("City not found or there was an issue with the weather service. Please try again.")
 def ask_gemini(query):
     # Replace with your actual Gemini API endpoint and key
-    api_key = 'AIzaSyBdtBkXs14EfmtuetApc4lQq1aZs7ZpEik'
-    endpoint = 'https://api.gemini.com/v1/your_endpoint'
-    
+    api_key = os.getenv('GEMINI_API_KEY')
+    endpoint = os.getenv('GEMINI_API_ENDPOINT')    
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json'

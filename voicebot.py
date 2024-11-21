@@ -5,6 +5,9 @@ import datetime
 import wikipedia
 import pyjokes
 import requests  # For connecting to APIs
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -43,9 +46,8 @@ def search_wikipedia(query):
 
 def ask_gemini(query):
     # Replace 'your_api_key' and 'your_endpoint' with your actual API details
-    api_key = 'AIzaSyBdtBkXs14EfmtuetApc4lQq1aZs7ZpEik'
-    endpoint = 'https://api.yourservice.com/query'
-    
+    api_key = os.getenv('API2_KEY')
+    endpoint = os.getenv('API2_ENDPOINT')    
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json'
